@@ -44,15 +44,16 @@ Restaurant getData() {
     // Validation loop for rating to ensure it stays within the 1-5 range
     while(!(cin >> temp.rating) || temp.rating < 1 || temp.rating>5) {
         cout << "ERROR: Please enter a number between 1 and 5: ";
-        cin.ignore();
+        cin.clear();
+        cin.ignore(100, '\n');
     };
     cout << "Enter average price: ";
     cin >> temp.price;
-    // Validation loop for delivery status using integer 0/1 to represent boolean
     cout << "Has delivery? (1 for Yes, 0 for No): ";
     while(!(cin >> temp.delivery) || (temp.delivery != 0 && temp.delivery != 1)) {
         cout << "ERROR: Enter 1 or 0: ";
-        cin.ignore();
+        cin.clear();
+        cin.ignore(100, '\n');
     };
     cin.ignore();
     
