@@ -16,7 +16,10 @@ struct Restaurant {
 
 Restaurant getData();
 
+void displayRestaurant(const Restaurant &r);
+
 int main() {
+    vector<Restaurant> list;
     return 0;
 }
 
@@ -39,6 +42,17 @@ Restaurant getData() {
         cin.ignore();
     };
     cin.ignore();
+    
 
     return temp;
+};
+
+void displayRestaurant(const Restaurant &r) {
+    cout << "\t> Name: " << r.name << endl;
+    cout << "\t> Address: " << r.address << endl;
+    cout << "\t> Rating: " << r.rating  << endl;
+    cout << "\t> Price: $" << r.price << endl;
+    cout << "\t> Delivery: ";
+    r.delivery ? cout << "yes" : cout << "no";
+    cout << endl;
 };
